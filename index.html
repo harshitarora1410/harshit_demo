@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Navigation Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul id="navbar"></ul>
+    </nav>
+
+    <script>
+        const navItems = [
+            { name: "Home", link: "#" },
+            { name: "About", link: "#about" },
+            { name: "Services", link: "#services" },
+            { name: "Contact", link: "#contact" }
+        ];
+
+        const navbar = document.getElementById('navbar');
+
+        navItems.forEach(item => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.textContent = item.name;
+            a.href = item.link;
+            li.appendChild(a);
+            navbar.appendChild(li);
+        });
+    </script>
+</body>
+</html>
